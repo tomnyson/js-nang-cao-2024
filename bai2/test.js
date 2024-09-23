@@ -17,9 +17,13 @@ const getListPost = new Promise((resolve, reject) => {
 
 const getListPostAsync = async () => {
     try {
+        console.log('getListPostAsync')
         const url = "https://61a5e3c48395690017be8ed2.mockapi.io/blogs/article"
         const response = await fetch(url)
-        console.log(response)
+        if (!response.ok) {
+            throw new Error(`call api failed`)
+        }
+        return response.json()
     } catch (error) {
         throw new Error(`call api failed ${error}`)
     }
@@ -45,3 +49,23 @@ const ListViewPost = (post) => {
     elmPost.innerHTML = result
 }
 
+// getListPostAsync()
+(async ()=> {
+    const result = await getListPostAsync( )
+    console.log( result )
+})()
+/**
+ const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const response = await fetch("https://example.org/post", {
+  method: "POST",
+  body: JSON.stringify({ username: "example" }),
+  headers: myHeaders,
+});
+
+ * tao 1 form (title, image, description)
+ * dung method post -> them moi
+ * dung method put  -> cap nhat du lieu
+ * dung method delete -> xoa records
+ */
