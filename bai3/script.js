@@ -47,6 +47,22 @@ const createPost = async (data) => {
   }
 }
 
+const deletePost = async (id) => {
+  try {
+    const url = `https://61a5e3c48395690017be8ed2.mockapi.io/blogs/article/${id}`
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+    })
+    if (!response.ok) {
+      throw new Error(`call api failed`)
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(`call api failed ${error}`)
+  }
+}
+
 getListPost
   .then((result) => {
     ListViewPost(result)
@@ -54,25 +70,41 @@ getListPost
   .catch((error) => {
     console.log(error)
   })
+  const reLoadView = async () => {
+    const posts = await getListPostAsync()
+    ListViewPost(posts)
+  }
+  
+
+  // xoa post
+const deletePostAction = async (id) => {
+  if (confirm("are you sure delete this post!") == true) {
+      await deletePost(id)
+      alert('delete success !')
+      reLoadView()
+  }
+}
 
 const ListViewPost = (post) => {
   // //   duyet array
   const elmPost = document.getElementById('posts')
   let result = ''
+  if (post.length ==0) {
+    result+= 'no data item'
+  }
   for (const item of post) {
     result += `
+    <div class="col-md-6">
       <h3>${item.title}</h3>
+      <button onClick="deletePostAction('${item.id}')" type="button" class="btn btn-danger">Delete</button>
       <img src="${item.picture}"  class="img-thumbnail"/></p>
       <p>${item.description}</p>
+    </div>    
       `
   }
   elmPost.innerHTML = result
 }
 
-const reLoadView = async () => {
-  const posts = await getListPostAsync()
-  ListViewPost(posts)
-}
 
 const elm_btn_create = document.getElementById('btn_create')
 elm_btn_create.addEventListener('click', async (event) => {
@@ -97,6 +129,7 @@ elm_btn_create.addEventListener('click', async (event) => {
     console.log(result)
   },
 )()
+
 
 
 /**
