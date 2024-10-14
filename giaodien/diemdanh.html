@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Attendance Form</h2>
+      <!-- Select session for attendance -->
+      <div class="mb-4">
+        <label for="sessionSelect" class="form-label">Chọn buổi điểm danh</label>
+        <select class="form-select" id="sessionSelect" name="attendanceSession" required>
+          <option value="" selected disabled>Chọn buổi...</option>
+          <option value="buoi1">Buổi 1</option>
+          <option value="buoi2">Buổi 2</option>
+          <option value="buoi3">Buổi 3</option>
+          <!-- Add more sessions as needed -->
+        </select>
+      </div>
+
+      <form action="/submit-attendance" method="POST">
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Mã sinh viên</th>
+              <th>Tên sinh viên</th>
+              <th>Trạng thái (On/Off)</th>
+              <th>Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>PK03775</td>
+              <td>Nguyễn Đình Anh</td>
+              <td>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="student1"
+                    name="attendance[PK03775]"
+                    checked
+                  />
+                  <label class="form-check-label" for="student1">Có mặt</label>
+                </div>
+              </td>
+              <td>
+                <textarea
+                  class="form-control"
+                  name="notes[PK03775]"
+                  rows="2"
+                  placeholder="Nhập ghi chú..."
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>PK04008</td>
+              <td>Nguyễn Văn Tài</td>
+              <td>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="student2"
+                    name="attendance[PK04008]"
+                  />
+                  <label class="form-check-label" for="student2">Có mặt</label>
+                </div>
+              </td>
+              <td>
+                <textarea
+                  class="form-control"
+                  name="notes[PK04008]"
+                  rows="2"
+                  placeholder="Nhập ghi chú..."
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>PK03754</td>
+              <td>Trần Tiến Phát</td>
+              <td>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="student3"
+                    name="attendance[PK03754]"
+                    checked
+                  />
+                  <label class="form-check-label" for="student3">Có mặt</label>
+                </div>
+              </td>
+              <td>
+                <textarea
+                  class="form-control"
+                  name="notes[PK03754]"
+                  rows="2"
+                  placeholder="Nhập ghi chú..."
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>PK03925</td>
+              <td>Vũ Nam Phi</td>
+              <td>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="student4"
+                    name="attendance[PK03925]"
+                  />
+                  <label class="form-check-label" for="student4">Có mặt</label>
+                </div>
+              </td>
+              <td>
+                <textarea
+                  class="form-control"
+                  name="notes[PK03925]"
+                  rows="2"
+                  placeholder="Nhập ghi chú..."
+                ></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Submit Attendance</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
