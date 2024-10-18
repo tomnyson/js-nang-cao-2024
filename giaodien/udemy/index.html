@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Platform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .course-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+      }
+      .rating {
+          color: #f39c12;
+      }
+      .course-price {
+          font-size: 1.25rem;
+          font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CoursePlatform</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="container mt-4">
+      <div class="jumbotron bg-light p-5">
+        <h1 class="display-4">Find the Perfect Course</h1>
+        <p class="lead">
+          Browse thousands of online courses to improve your skills and advance your career.
+        </p>
+        <hr class="my-4" />
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search for courses"
+            aria-label="Search"
+          />
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Categories</h5>
+          <ul class="list-group">
+            <li class="list-group-item">Development</li>
+            <li class="list-group-item">Business</li>
+            <li class="list-group-item">IT & Software</li>
+            <li class="list-group-item">Design</li>
+            <li class="list-group-item">Marketing</li>
+            <li class="list-group-item">Personal Development</li>
+          </ul>
+
+          <h5 class="mt-4">Filter by Price</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="free" id="freeCheck" />
+            <label class="form-check-label" for="freeCheck"> Free Courses </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="paid" id="paidCheck" />
+            <label class="form-check-label" for="paidCheck"> Paid Courses </label>
+          </div>
+        </div>
+
+        <!-- Course Grid Section -->
+        <div class="col-md-9">
+          <h4>Popular Courses</h4>
+          <div class="row">
+            <!-- Example Course Card 1 -->
+            <div class="col-md-4 mb-4">
+              <div class="card course-card">
+                <img
+                  src="https://via.placeholder.com/350x200"
+                  class="card-img-top"
+                  alt="Course Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Learn Web Development</h5>
+                  <p class="card-text">Instructor: John Doe</p>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i> (4.5)
+                  </div>
+                  <div class="course-price">$29.99</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Course Card 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="card course-card">
+                <img
+                  src="https://via.placeholder.com/350x200"
+                  class="card-img-top"
+                  alt="Course Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Master Python Programming</h5>
+                  <p class="card-text">Instructor: Jane Smith</p>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i> (4.0)
+                  </div>
+                  <div class="course-price">$19.99</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Course Card 3 -->
+            <div class="col-md-4 mb-4">
+              <div class="card course-card">
+                <img
+                  src="https://via.placeholder.com/350x200"
+                  class="card-img-top"
+                  alt="Course Image"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Graphic Design for Beginners</h5>
+                  <p class="card-text">Instructor: Mark Davis</p>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i> (3.8)
+                  </div>
+                  <div class="course-price">$14.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more course cards as needed -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+  </body>
+</html>

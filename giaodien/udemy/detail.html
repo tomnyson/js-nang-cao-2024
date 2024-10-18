@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Detail</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .rating {
+          color: #f39c12;
+      }
+      .course-banner {
+          height: 400px;
+          background-color: #f7f7f7;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+      .course-banner img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+      .learn-list {
+          list-style-type: none;
+          padding-left: 0;
+      }
+      .learn-list li {
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+      }
+      .curriculum-list {
+          list-style-type: none;
+          padding-left: 0;
+      }
+      .curriculum-list li {
+          padding: 10px 0;
+          border-bottom: 1px solid #ddd;
+      }
+      .review {
+          margin-top: 20px;
+          margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CoursePlatform</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Course Banner Section -->
+    <div class="course-banner">
+      <img src="https://via.placeholder.com/1200x400" alt="Course Banner" />
+    </div>
+
+    <!-- Course Details -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- Course Overview -->
+          <h1>Master Web Development</h1>
+          <p>
+            Instructor: John Doe | Category: Development | Rating:
+            <span class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i> (4.5)
+            </span>
+            | 5000 students enrolled
+          </p>
+
+          <!-- Course Description -->
+          <h3>Course Description</h3>
+          <p>
+            This course provides a comprehensive introduction to web development. You’ll learn the
+            basics of HTML, CSS, and JavaScript, and build several real-world projects along the
+            way. Whether you’re a complete beginner or looking to sharpen your skills, this course
+            is perfect for you.
+          </p>
+
+          <!-- What You'll Learn -->
+          <h3>What you'll learn</h3>
+          <ul class="learn-list">
+            <li><i class="bi bi-check-lg"></i> Build responsive websites using HTML and CSS</li>
+            <li>
+              <i class="bi bi-check-lg"></i> Write JavaScript to create interactive web experiences
+            </li>
+            <li><i class="bi bi-check-lg"></i> Understand the fundamentals of web development</li>
+            <li><i class="bi bi-check-lg"></i> Deploy websites and web applications</li>
+          </ul>
+
+          <!-- Course Curriculum -->
+          <h3>Course Curriculum</h3>
+          <ul class="curriculum-list">
+            <li>Module 1: Introduction to Web Development</li>
+            <li>Module 2: HTML Basics</li>
+            <li>Module 3: CSS Fundamentals</li>
+            <li>Module 4: Introduction to JavaScript</li>
+            <li>Module 5: Building Real-World Projects</li>
+          </ul>
+
+          <!-- Course Reviews -->
+          <h3>Student Reviews</h3>
+          <div class="review">
+            <h5>
+              Jane Smith
+              <span class="rating"
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-half"></i
+              ></span>
+              (4.5)
+            </h5>
+            <p>
+              This course was exactly what I needed. The instructor is great and the content is
+              perfect for beginners!
+            </p>
+          </div>
+          <div class="review">
+            <h5>
+              Mark Johnson
+              <span class="rating"
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+              ></span>
+              (5.0)
+            </h5>
+            <p>
+              Awesome course! I now feel confident enough to start building websites professionally.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar Section -->
+        <div class="col-md-4">
+          <!-- Course Purchase Details -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">$29.99</h2>
+              <button class="btn btn-primary w-100">Enroll Now</button>
+              <p class="mt-3"><i class="bi bi-check-lg"></i> 30-Day Money-Back Guarantee</p>
+            </div>
+          </div>
+
+          <!-- Instructor Info -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5>Instructor</h5>
+              <p>
+                <strong>John Doe</strong><br />Web Developer and Instructor with 10 years of
+                experience.
+              </p>
+              <p>
+                John has taught thousands of students worldwide and is known for his engaging and
+                practical teaching style.
+              </p>
+            </div>
+          </div>
+
+          <!-- Related Courses -->
+          <div class="card">
+            <div class="card-body">
+              <h5>Related Courses</h5>
+              <ul>
+                <li><a href="#">Advanced JavaScript Techniques</a></li>
+                <li><a href="#">CSS Grid & Flexbox Mastery</a></li>
+                <li><a href="#">Full-Stack Web Development</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+  </body>
+</html>

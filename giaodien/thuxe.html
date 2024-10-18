@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Parking Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Quản Lý Gửi Xe</h2>
+
+      <!-- Form for adding new vehicle -->
+      <h4 class="mt-4">Thêm Xe Mới</h4>
+      <form action="/add-vehicle" method="POST" class="mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="vehicleNumber" class="form-label">Biển số xe</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vehicleNumber"
+              name="vehicleNumber"
+              placeholder="Nhập biển số xe"
+              required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ownerName" class="form-label">Tên chủ xe</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ownerName"
+              name="ownerName"
+              placeholder="Nhập tên chủ xe"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="vehicleType" class="form-label">Loại xe</label>
+            <select class="form-select" id="vehicleType" name="vehicleType" required>
+              <option value="" selected disabled>Chọn loại xe...</option>
+              <option value="Xe máy">Xe máy</option>
+              <option value="Ô tô">Ô tô</option>
+              <option value="Xe đạp">Xe đạp</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="entryTime" class="form-label">Giờ vào</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="entryTime"
+              name="entryTime"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="parkingLot" class="form-label">Khu vực gửi</label>
+          <input
+            type="text"
+            class="form-control"
+            id="parkingLot"
+            name="parkingLot"
+            placeholder="Nhập khu vực gửi"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm xe</button>
+      </form>
+
+      <!-- List of vehicles -->
+      <h4>Danh Sách Xe Đã Gửi</h4>
+      <table class="table table-bordered table-striped mt-3">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Biển số xe</th>
+            <th>Tên chủ xe</th>
+            <th>Loại xe</th>
+            <th>Giờ vào</th>
+            <th>Giờ ra</th>
+            <th>Khu vực gửi</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example vehicle entry -->
+          <tr>
+            <td>1</td>
+            <td>30A-12345</td>
+            <td>Nguyễn Văn A</td>
+            <td>Ô tô</td>
+            <td>2024-10-10 08:30</td>
+            <td>2024-10-10 10:30</td>
+            <!-- Example exit time -->
+            <td>Khu vực A</td>
+            <td>40,000 VNĐ</td>
+            <!-- Example calculated fee -->
+            <td><span class="badge bg-success">Đã rời</span></td>
+            <td>
+              <button class="btn btn-danger btn-sm">Xóa</button>
+            </td>
+          </tr>
+          <!-- Add more vehicle entries as needed -->
+          <tr>
+            <td>2</td>
+            <td>60B-67890</td>
+            <td>Trần Văn B</td>
+            <td>Xe máy</td>
+            <td>2024-10-10 09:00</td>
+            <td></td>
+            <!-- No exit time yet -->
+            <td>Khu vực B</td>
+            <td>--</td>
+            <!-- No fee until exit -->
+            <td><span class="badge bg-warning">Chưa ra</span></td>
+            <td>
+              <button
+                class="btn btn-success btn-sm"
+                onclick="calculateFee(this, '2024-10-10 09:00')"
+              >
+                Xe đã ra
+              </button>
+              <button class="btn btn-danger btn-sm">Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
